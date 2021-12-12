@@ -1,3 +1,5 @@
+import math
+
 dicts = [
     {'total': 999641890816, 'used': 228013805568}, 
     {'total': 61686008768, 'used': 52522710872},
@@ -12,9 +14,9 @@ num_volume = input('Введите номер накопителя: ')
 if not num_volume.isdigit():
     print('Введена некорректная строка!')
 elif num_volume.isdigit() in range(len(dicts)):
-   for key,value in dicts[int(num_volume)].items():
-       print(value)
+    free_persent = ((dicts[int(num_volume)]['total'] -dicts[int(num_volume)]['used'])/(dicts[int(num_volume)]['total']/100) )
 
+print('Free disk space = ', round(free_persent,2) , '% ')
 # else:
 #     print('За приделами массива')
 
