@@ -14,9 +14,12 @@ num_volume = input('Введите номер накопителя: ')
 if not num_volume.isdigit():
     print('Введена некорректная строка!')
 elif num_volume.isdigit() in range(len(dicts)):
-    free_persent = ((dicts[int(num_volume)]['total'] -dicts[int(num_volume)]['used'])/(dicts[int(num_volume)]['total']/100) )
-
-print('Free disk space = ', round(free_persent,2) , '% ')
-# else:
-#     print('За приделами массива')
+    free_persent = ((dicts[int(num_volume)]['total'] - dicts[int(num_volume)]['used'])/(dicts[int(num_volume)]['total']/100) )
+    print('Free disk space = ', round(free_persent,2) , '%')
+    if (dicts[int(num_volume)]['total'] - dicts[int(num_volume)]['used'])/100 < 5000 or free_persent < 5:
+        print('на накопителе ', num_volume  ,' критически мало свободного места')
+    elif (dicts[int(num_volume)]['total'] - dicts[int(num_volume)]['used'])/100 < 30000 or free_persent < 10:
+        print('на накопителе ', num_volume  ,' мало свободного места')
+    else:
+        print('на накопителе ', num_volume  ,' достаточно свободного места')
 
