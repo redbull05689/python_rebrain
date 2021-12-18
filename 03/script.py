@@ -27,7 +27,7 @@ print(list[3])
 # 2
 list_2 = list[3].split(' ')
 list_2[0] = list_2[0:3]
-list_2[-1] = list_2[-2] + ' ' +list_2[-1]
+# list_2[-1] = list_2[-2] + ' ' +list_2[-1]
 
 
 del list_2[1]
