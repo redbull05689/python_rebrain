@@ -33,6 +33,15 @@ dict2 = {
     }
 }
 
-# 4
+# 4)
+list_4 = ['May 26 12:48:18', 'ideapad', 'systemd[1]', 'Finished Message of the Day.']
+dict_keys = ['time', 'pc_name', 'service_name', 'message']
 
-print(dict2['string_1']['pc_name'], ": ", dict2['string_1']['message'])
+dict_4 = dict(zip(dict_keys, list_4))
+
+print(dict_4 )
+
+# 5)
+list_5 = (dict2, dict_4)
+
+print(list_5)
