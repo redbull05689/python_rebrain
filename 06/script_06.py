@@ -17,10 +17,8 @@ logs = [
 # Загрузите в файл с именем 'file_6.txt' строки этого списка за 20 мая
 
 regexp = re.compile('^(\\bMay 20\\b)[^$]')
-print(regexp)
 
 for rec in logs:
-    print(regexp.search(rec))
     if regexp.search(rec) != None:
         with open('file_6.txt', 'a+', encoding='utf-8') as file_1:
             file_1.write(str(rec))
@@ -29,8 +27,8 @@ for rec in logs:
 
 # Считайте из этого файла время первой записи. Ничего кроме времени считывать не нужно! Выведите это время на экран.
 
-# with open('file_6.txt', 'r+', encoding='utf-8') as file_1:
-#     # content = file_1.read()
-#     print(file_1.readline())
-#     file_1.close()
+with open('file_6.txt', 'r+', encoding='utf-8') as file_1:
+    file_1.seek(8)
+    print(file_1.read(8))
+    file_1.close()
 
