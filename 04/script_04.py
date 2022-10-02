@@ -14,6 +14,7 @@ if not num_volume.isdigit():
 elif num_volume.isdigit() in range(len(dicts)):
    for key,value in dicts[int(num_volume)].items():
        print(value)
+       free_space = dicts.get(total) - dicts.get(used)
 
 # else:
 #     print('За приделами массива')
